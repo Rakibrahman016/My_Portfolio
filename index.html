@@ -1,415 +1,836 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohammad Rakibur Rahman</title>
+  <meta name="description" content="Portfolio of Mohammad Rakibur Rahman, MSc student at the University of Oulu working on computer vision, thermal imaging, multimodal physiological monitoring, and intelligent sensing systems." />
+  <link rel="canonical" href="https://rakibrahman016.github.io/My_Portfolio/" />
+  <meta property="og:title" content="Mohammad Rakibur Rahman" />
+  <meta property="og:description" content="Computer vision, thermal imaging, multimodal physiological monitoring, and intelligent sensing systems. Based in Oulu, Finland." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rakibrahman016.github.io/My_Portfolio/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="favicon.ico" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --brand-900: #0d47a1;
+      --brand-700: #1976d2;
+      --surface: #ffffff;
+      --ring: #dbeafe;
+      --chip-bg: #e3f2fd;
+      --chip-fg: #0d47a1;
+      --shadow: 0 1px 4px rgba(0,0,0,.08);
+      --border: #e5e7eb;
+      --maxw: 1100px;
+    }
 
-<title>Mohammad Rakibur Rahman</title>
+    [data-theme="dark"]{
+      --bg: #0b111b;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand-900: #93c5fd;
+      --brand-700: #60a5fa;
+      --surface: #0f172a;
+      --ring: #1e293b;
+      --chip-bg: #0b2347;
+      --chip-fg: #93c5fd;
+      --shadow: 0 1px 4px rgba(0,0,0,.35);
+      --border: #1f2937;
+    }
 
-<style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      line-height:1.65;
+      color:var(--text);
+      background:var(--bg);
+    }
 
-body{
-font-family: system-ui, sans-serif;
-margin:0;
-background:#f5f7fb;
-color:#222;
-}
+    img{max-width:100%; display:block}
+    a{color:var(--brand-700); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrapper{width:min(var(--maxw), 92%); margin:0 auto}
+    .muted{color:var(--muted)}
+    .surface{background:var(--surface)}
+    .alt{background:color-mix(in oklab, var(--ring) 35%, transparent)}
 
-.wrapper{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      position:static; width:auto; height:auto; padding:.5rem .75rem;
+      background:var(--surface); box-shadow:var(--shadow); border-radius:.5rem;
+    }
 
-header{
-background:#0d47a1;
-color:white;
-padding:70px 0;
-text-align:center;
-}
+    header{
+      background: linear-gradient(135deg, var(--brand-900), var(--brand-700));
+      color:#fff;
+      padding:78px 0 54px;
+      text-align:center;
+    }
 
-header h1{
-margin:0;
-font-size:2.5rem;
-}
+    header h1{
+      font-size: clamp(2rem, 2.8vw + 1rem, 3rem);
+      margin:0 0 .75rem;
+      line-height:1.15;
+    }
 
-header p{
-margin-top:10px;
-opacity:.9;
-}
+    header p{
+      max-width:70ch;
+      margin:0 auto 1.25rem;
+      opacity:.96;
+    }
 
-nav{
-background:white;
-position:sticky;
-top:0;
-box-shadow:0 2px 6px rgba(0,0,0,.1);
-z-index:100;
-}
+    .cta-row{
+      display:flex;
+      gap:.75rem;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:1.25rem;
+    }
 
-nav ul{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-list-style:none;
-margin:0;
-padding:10px;
-}
+    .btn{
+      display:inline-block;
+      padding:.7rem 1rem;
+      border-radius:.8rem;
+      background:#fff;
+      color:#0d47a1;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      border:1px solid transparent;
+      cursor:pointer;
+    }
 
-nav a{
-text-decoration:none;
-font-weight:600;
-padding:8px 14px;
-border-radius:6px;
-color:#0d47a1;
-}
+    .btn:hover{text-decoration:none; border-color:var(--ring)}
+    .btn.alt{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
 
-nav a:hover{
-background:#e3f2fd;
-}
+    nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--surface);
+      box-shadow:var(--shadow);
+    }
 
-section{
-padding:70px 0;
-}
+    nav ul{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.25rem .55rem;
+      margin:0;
+      padding:.3rem 0;
+    }
 
-h2{
-text-align:center;
-color:#0d47a1;
-margin-bottom:30px;
-}
+    nav a{
+      display:block;
+      padding:.85rem .75rem;
+      border-radius:.55rem;
+      font-weight:700;
+      color:inherit;
+    }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,.08);
-margin-bottom:20px;
-}
+    nav a.active,
+    nav a[aria-current="page"]{
+      background:var(--ring);
+      color:var(--brand-900);
+      text-decoration:none;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
+    section{padding:68px 0}
+    .section-title{text-align:center; margin-bottom:32px}
+    .section-title h2{
+      margin:0 0 .4rem;
+      color:var(--brand-900);
+      font-size:clamp(1.5rem, 1vw + 1rem, 2rem);
+    }
+    .section-title p{
+      margin:0 auto;
+      max-width:65ch;
+      color:var(--muted);
+    }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-justify-content:center;
-}
+    .about{
+      display:grid;
+      grid-template-columns: 1.3fr 320px;
+      gap:32px;
+      align-items:center;
+    }
 
-.skills span{
-background:#e3f2fd;
-padding:6px 12px;
-border-radius:20px;
-font-size:.9rem;
-}
+    .about-text p{margin:0 0 1rem}
+    .about-image img{
+      width:100%;
+      max-width:260px;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow:var(--shadow);
+      margin-inline:auto;
+    }
 
-footer{
-background:#0d47a1;
-color:white;
-text-align:center;
-padding:25px;
-}
+    .two-column{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:32px;
+    }
 
-</style>
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:24px;
+      align-items:start;
+    }
 
+    .card{
+      display:flex;
+      flex-direction:column;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:20px;
+      transition:transform .2s ease, border-color .2s ease;
+      height:100%;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:var(--ring);
+    }
+
+    .card > * + *{margin-top:.55rem}
+    .card h3{
+      margin:0;
+      font-size:1.15rem;
+      color:var(--brand-700);
+      line-height:1.35;
+    }
+
+    .card p{margin:0}
+    .card .spacer{margin-top:auto}
+
+    .item{
+      margin-bottom:24px;
+      padding-bottom:20px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .item:last-child{
+      margin-bottom:0;
+      padding-bottom:0;
+      border-bottom:none;
+    }
+
+    .item h3{
+      margin:0 0 6px;
+      color:var(--brand-700);
+      font-size:1.15rem;
+    }
+
+    .meta{
+      display:block;
+      font-size:.95rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .skills-list,
+    .language-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      list-style:none;
+      padding:0;
+      margin:10px 0 0;
+    }
+
+    .skills-list li,
+    .language-list li{
+      background:var(--chip-bg);
+      color:var(--chip-fg);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:.92rem;
+    }
+
+    .project-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .project-gallery img{
+      aspect-ratio:4/3;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    .thumb{
+      aspect-ratio:16/9;
+      object-fit:cover;
+      border-radius:8px;
+      width:100%;
+    }
+
+    .thesis-figure{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .thesis-figure img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .thesis-figure figcaption{
+      padding:10px 14px;
+      font-size:.92rem;
+      color:var(--muted);
+      background:var(--surface);
+    }
+
+    footer{
+      background:var(--brand-900);
+      color:#fff;
+      text-align:center;
+      padding:30px 0;
+      font-size:.96rem;
+    }
+
+    footer a{color:#fff; text-decoration:underline}
+
+    @media (max-width: 820px){
+      .about{grid-template-columns:1fr}
+      header{padding:64px 0 42px}
+      section{padding:56px 0}
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-
-<div class="wrapper">
-
-<h1>Mohammad Rakibur Rahman</h1>
-
-<p>
-Computer Vision • Thermal Imaging • Multimodal Physiological Monitoring
-</p>
-
-</div>
-
-</header>
-
-<nav>
-
-<ul>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#research">Research Interests</a></li>
-
-<li><a href="#thesis">Thesis</a></li>
-
-<li><a href="#publications">Publications</a></li>
-
-<li><a href="#projects">Research Projects</a></li>
-
-<li><a href="#experience">Experience</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="wrapper">
-
-<h2>About</h2>
-
-<div class="card">
-
-<p>
-
-I am <strong>Mohammad Rakibur Rahman</strong>, a Master's student in Computer Science and Engineering at the <strong>University of Oulu</strong>.  
-
-My research focuses on computer vision, thermal imaging, and multimodal sensing for non-contact physiological monitoring.
-
-</p>
-
-<p>
-
-I work on developing real-time sensing systems that combine thermal cameras, RGB-D sensors, and biosensors to study physiological dynamics and autonomic activity.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- RESEARCH INTERESTS -->
-
-<section id="research">
-
-<div class="wrapper">
-
-<h2>Research Interests</h2>
-
-<div class="skills">
-
-<span>Computer Vision</span>
-<span>Thermal Imaging</span>
-<span>Multimodal Sensing</span>
-<span>Physiological Signal Analysis</span>
-<span>Deep Learning</span>
-<span>Real-time Image Processing</span>
-<span>Affective Computing</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- THESIS -->
-
-<section id="thesis">
-
-<div class="wrapper">
-
-<h2>Master's Thesis</h2>
-
-<div class="card">
-
-<h3>Development of a Multimodal System for Non-Contact Physiological Monitoring</h3>
-
-<p>
-
-This research investigates whether thermoregulation-driven temperature dynamics from facial and palm regions can be used as non-contact indicators of autonomic nervous system activity.
-
-</p>
-
-<p>
-
-The system integrates thermal imaging, RGB-D cameras, and wearable biosensors to analyze relationships between skin temperature dynamics, respiration, and electrodermal activity.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PUBLICATIONS -->
-
-<section id="publications">
-
-<div class="wrapper">
-
-<h2>Publications</h2>
-
-<div class="card">
-
-<strong>A Multichannel Localization Method for Camouflaged Object Detection</strong>
-
-<br>
-
-IEEE International Conference on Image Processing (ICIP 2023)
-
-<br><br>
-
-<a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank">
-View on Google Scholar
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<div class="wrapper">
-
-<h2>Research Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>ThermApp Thermal Imaging System</h3>
-
-<p>
-
-Python application for the ThermApp infrared camera including real-time frame processing, calibration, and temperature extraction.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Multichannel Camouflaged Object Localization</h3>
-
-<p>
-
-Lightweight object localization approach combining Fourier analysis, entropy maps, and CAM-based deep learning.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section id="experience">
-
-<div class="wrapper">
-
-<h2>Experience</h2>
-
-<div class="card">
-
-<strong>Summer Trainee — CMVS Lab</strong>
-
-<br>
-
-University of Oulu
-
-<br><br>
-
-Worked on thermal camera software development including frame acquisition, calibration pipelines, and real-time thermal image processing.
-
-</div>
-
-<div class="card">
-
-<strong>Software Engineer — Onutiative Ltd</strong>
-
-<br>
-
-Developed REST APIs and backend systems for IoT vending machine platforms.
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<div class="wrapper">
-
-<h2>Skills</h2>
-
-<div class="skills">
-
-<span>Python</span>
-<span>PyTorch</span>
-<span>TensorFlow</span>
-<span>OpenCV</span>
-<span>Flask</span>
-<span>NumPy</span>
-<span>Pandas</span>
-<span>Git</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="wrapper">
-
-<h2>Contact</h2>
-
-<div class="card">
-
-<p>Email: Mohammad.R.Rahman@oulu.fi</p>
-
-<p>
-Google Scholar:
-<a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank">
-Profile
-</a>
-</p>
-
-<p>
-GitHub:
-<a href="https://github.com/MohammadRakiburRahman" target="_blank">
-MohammadRakiburRahman
-</a>
-</p>
-
-<p>Location: Oulu, Finland</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Mohammad Rakibur Rahman
-
-</footer>
-
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header role="banner">
+    <div class="wrapper">
+      <h1>Mohammad Rakibur Rahman</h1>
+      <p>
+        MSc student in Computer Science and Engineering at the University of Oulu, working on
+        computer vision, thermal imaging, and multimodal non-contact physiological monitoring.
+      </p>
+
+      <div class="cta-row" role="group" aria-label="Primary actions">
+        <a class="btn" href="mailto:Mohammad.R.Rahman@oulu.fi">Email me</a>
+        <a class="btn alt" href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a class="btn alt" href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn alt" href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn alt" href="https://drive.google.com/file/d/14ns6VLREtGyIaz1Y3WNSNDRzInp03iI5/view?usp=sharing" target="_blank" rel="noopener noreferrer">CV</a>
+        <button class="btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌗 Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Primary">
+    <div class="wrapper">
+      <ul>
+        <li><a href="#about" class="navlink">About</a></li>
+        <li><a href="#research-interests" class="navlink">Research Interests</a></li>
+        <li><a href="#thesis" class="navlink">Thesis</a></li>
+        <li><a href="#publications" class="navlink">Publications</a></li>
+        <li><a href="#research-projects" class="navlink">Research Projects</a></li>
+        <li><a href="#experience" class="navlink">Experience</a></li>
+        <li><a href="#engineering-projects" class="navlink">Engineering Projects</a></li>
+        <li><a href="#skills" class="navlink">Skills</a></li>
+        <li><a href="#achievements" class="navlink">Achievements</a></li>
+        <li><a href="#contact" class="navlink">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section id="about" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about">
+          <div class="about-text">
+            <p>
+              Hello, I’m <strong>Mohammad Rakibur Rahman</strong>, an MSc student in Computer Science and Engineering
+              with a focus on Artificial Intelligence at the <strong>University of Oulu</strong>, Finland.
+              My work sits at the intersection of <strong>computer vision, thermal imaging, multimodal sensing,
+              and intelligent real-time systems</strong>.
+            </p>
+            <p>
+              I am particularly interested in building research-driven systems that can translate complex sensing data
+              into meaningful physiological and behavioral insights. My recent work includes thermal camera software
+              development, calibration and temperature extraction pipelines, face detection in thermal video,
+              and multimodal sensing for non-contact physiological monitoring.
+            </p>
+            <p>
+              Alongside research, I also enjoy building practical systems and turning ideas into working software.
+              I value clarity, experimentation, and applied impact—especially in areas related to healthcare,
+              human-centered AI, and real-time vision applications.
+            </p>
+          </div>
+
+          <div class="about-image">
+            <img src="assets/rakib.jpg" alt="Portrait of Mohammad Rakibur Rahman" width="500" height="500" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research-interests" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Research Interests</h2>
+          <p>Areas I am actively exploring through research, thesis work, and experimental system development.</p>
+        </div>
+
+        <ul class="skills-list" style="justify-content:center;">
+          <li>Computer Vision</li>
+          <li>Thermal Imaging</li>
+          <li>Multimodal Physiological Monitoring</li>
+          <li>Contactless Health Sensing</li>
+          <li>Signal Processing</li>
+          <li>Human-Centered AI</li>
+          <li>Real-Time Image Processing</li>
+          <li>Deep Learning for Vision</li>
+          <li>Affective Computing</li>
+          <li>Autonomic Activity Analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="thesis" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Master’s Thesis</h2>
+          <p>Current research direction at the Center for Machine Vision and Signal Analysis (CMVS).</p>
+        </div>
+
+        <div class="card">
+          <h3>Development of a Multimodal System for Non-Contact Physiological Monitoring</h3>
+          <p>
+            My thesis investigates whether <strong>thermoregulation-driven temperature dynamics</strong> in facial and palm
+            regions, captured through thermal imaging, can serve as reliable <strong>non-contact indicators of autonomic activity</strong>,
+            particularly respiration-related and electrodermal responses.
+          </p>
+          <p>
+            The system integrates <strong>thermal imaging, RGB-D sensing, and wearable biosensors</strong> to study the relationship between
+            skin temperature dynamics and reference physiological signals. The broader goal is to advance contactless physiological monitoring
+            for applications in healthcare, affective computing, and intelligent human-centered systems.
+          </p>
+
+          <figure class="thesis-figure">
+            <img src="assets/thesisplan.png" alt="Thesis pipeline showing thermal camera, biosignals, ROI extraction, comparison of ROI signals, and phase 3 deep learning or encoder-decoder modeling" loading="lazy" />
+            <figcaption>Overview of the thesis pipeline for multimodal non-contact physiological monitoring.</figcaption>
+          </figure>
+
+          <p class="muted">
+            Affiliation: Center for Machine Vision and Signal Analysis (CMVS), University of Oulu
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Publications</h2>
+          <p>Selected research output and scholarly work.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>A Multichannel Localization Method for Camouflaged Object Detection</h3>
+            <p>
+              <strong>Rahman, M. R.</strong> and co-authors.
+              Presented at the <strong>IEEE International Conference on Image Processing (ICIP 2023)</strong>.
+            </p>
+            <p>
+              This work proposes a lightweight multichannel localization framework for camouflaged object detection using
+              Fourier-based analysis, entropy cues, class activation maps, and global average pooling to highlight discriminative regions.
+            </p>
+            <p class="spacer">
+              <a href="https://www.researchgate.net/publication/374543237_A_Multichannel_Localization_Method_for_Camouflaged_Object_Detection" target="_blank" rel="noopener noreferrer">Paper</a>
+              &nbsp;•&nbsp;
+              <a href="https://github.com/MohammadRakiburRahman/Multichannel-Localization-ICIP-2023" target="_blank" rel="noopener noreferrer">Code</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Google Scholar Profile</h3>
+            <p>
+              For citation record, research visibility, and publication updates, please see my Google Scholar profile.
+            </p>
+            <p class="spacer">
+              <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">View Google Scholar</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research-projects" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Research Projects</h2>
+          <p>Projects aligned with my research direction in thermal vision, multimodal sensing, and scientific software.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>ThermApp Thermal Imaging Application</h3>
+            <p>
+              A Python-based software system for the ThermApp infrared camera, including
+              <strong>low-level USB communication</strong>, <strong>real-time frame acquisition</strong>,
+              <strong>sensor calibration</strong>, and <strong>temperature extraction</strong> using Planck-law-based conversion.
+            </p>
+            <p>
+              The system was extended with thermal face detection to support automatic region-of-interest processing
+              in thermal video streams and research-driven analysis workflows.
+            </p>
+            <div class="project-gallery">
+              <img src="assets/img1.jpeg" alt="Thermal output example 1" loading="lazy" />
+              <img src="assets/img2.jpg" alt="Thermal output example 2" loading="lazy" />
+              <img src="assets/demo.gif" alt="Thermal video demo" loading="lazy" />
+            </div>
+            <p class="spacer">
+              <a href="https://github.com/MohammadRakiburRahman/Them_App" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Multimodal Non-Contact Physiological Monitoring</h3>
+            <p>
+              Ongoing research on whether facial and palm thermal dynamics can be used as
+              contactless markers of physiological activity when analyzed together with additional sensing modalities.
+            </p>
+            <p>
+              The work combines thermal imaging, RGB-D sensing, and wearable references to investigate
+              temporal patterns related to autonomic responses and respiratory behavior.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Multichannel Localization for Camouflaged Object Detection</h3>
+            <p>
+              A research project proposing a computationally lightweight localization method for camouflaged objects
+              using Fourier phase-amplitude analysis, local entropy, and class activation maps.
+            </p>
+            <div class="project-gallery">
+              <img src="assets/cod1.jpg" alt="Camouflaged object localization example" loading="lazy" />
+              <img src="assets/cod2.png" alt="Camouflaged object localization result" loading="lazy" />
+            </div>
+            <p class="spacer">
+              <a href="https://github.com/MohammadRakiburRahman/Multichannel-Localization-ICIP-2023" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Research & Professional Experience</h2>
+          <p>Academic and industry experience shaping my work in intelligent systems and applied AI.</p>
+        </div>
+
+        <article class="item">
+          <h3>Summer Trainee — Center for Machine Vision & Signal Analysis (CMVS)</h3>
+          <span class="meta">Oulu, Finland • <time datetime="2025-06">June 2025</time> – <time datetime="2025-07">July 2025</time></span>
+          <p>
+            Developed a complete thermal imaging application for the ThermApp infrared camera.
+            Worked on low-level USB communication, real-time frame processing, calibration pipelines,
+            and temperature extraction from raw thermal sensor data. Also explored face detection integration
+            for thermal streams and strengthened research software engineering skills in vision-based sensing.
+          </p>
+        </article>
+
+        <article class="item">
+          <h3>Junior Software Engineer — Onutiative Ltd</h3>
+          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-03">March 2023</time> – <time datetime="2023-05">May 2023</time></span>
+          <p>
+            Designed REST APIs for IoT vending machine systems, improved stock update accuracy,
+            and supported platform reliability through testing and backend development.
+          </p>
+        </article>
+
+        <article class="item">
+          <h3>Software Developer Intern — Onutiative Ltd</h3>
+          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-05">May 2023</time> – <time datetime="2024-06">June 2024</time></span>
+          <p>
+            Built reporting systems for IoT devices using Flask, optimized CRM features, designed RESTful APIs,
+            and developed automation tools including Excel VBA macros to reduce manual effort and improve operations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="engineering-projects" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Engineering Projects</h2>
+          <p>Additional applied AI and software projects beyond my research-focused work.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Helmet &amp; License Plate Detection</h3>
+            <p>
+              Real-time safety compliance system using <strong>YOLOv4</strong>, integrated with
+              <strong>TensorFlow</strong> and <strong>Flask</strong> to reduce manual inspections.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Traffic Sign Classification</h3>
+            <p>
+              Built a <strong>VGG16-based</strong> traffic sign classifier reaching strong accuracy and designed
+              for robust real-world usage with TensorFlow, Keras, and scikit-learn.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Face Recognition Attendance</h3>
+            <p>
+              Team-led real-time attendance system combining <strong>ResNet50</strong>, <strong>HOG features</strong>,
+              and <strong>OpenCV</strong> for reliable employee recognition and logging.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Skills & Tools</h2>
+          <p>Technical, research, and software skills supporting my work.</p>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3>Research Skills</h3>
+            <ul class="skills-list">
+              <li>Thermal Imaging Analysis</li>
+              <li>Physiological Signal Processing</li>
+              <li>Multimodal Sensor Fusion</li>
+              <li>Experimental Design</li>
+              <li>Scientific Writing</li>
+              <li>Dataset Annotation</li>
+              <li>Real-Time Data Processing</li>
+              <li>Computer Vision Evaluation</li>
+            </ul>
+
+            <h3>Programming Languages</h3>
+            <ul class="skills-list">
+              <li>Python</li>
+              <li>C</li>
+              <li>PHP</li>
+            </ul>
+
+            <h3>Frameworks & Libraries</h3>
+            <ul class="skills-list">
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>Keras</li>
+              <li>OpenCV</li>
+              <li>Flask</li>
+              <li>scikit-learn</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>SciPy</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Software & Development</h3>
+            <ul class="skills-list">
+              <li>Git</li>
+              <li>Agile & Scrum</li>
+              <li>REST APIs</li>
+              <li>UML</li>
+              <li>Excel VBA</li>
+              <li>Research Prototyping</li>
+            </ul>
+
+            <h3>Databases</h3>
+            <ul class="skills-list">
+              <li>MySQL</li>
+              <li>SQLite</li>
+              <li>PostgreSQL</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul class="language-list">
+              <li>English — Fluent</li>
+              <li>Finnish — Basic</li>
+              <li>Bengali — Native</li>
+              <li>Hindi — Conversational</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Achievements</h2>
+          <p>Research and academic milestones.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>IEEE ICIP 2023 Publication</h3>
+            <p>Published research work on camouflaged object detection at a leading international image processing conference.</p>
+          </article>
+
+          <article class="card">
+            <h3>Research Assistant Grant</h3>
+            <p>Received a summer research assistant grant at the University of Oulu.</p>
+          </article>
+
+          <article class="card">
+            <h3>Travel Grant</h3>
+            <p>Selected as one of a limited number of recipients for travel support related to IEEE ICIP participation.</p>
+          </article>
+
+          <article class="card">
+            <h3>Certifications</h3>
+            <p>Stanford Online: Supervised Machine Learning. IELTS overall band 7.0.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>I am open to research collaboration, thesis-related discussion, and opportunities in computer vision, AI, and sensing systems.</p>
+        </div>
+
+        <ul class="skills-list" style="justify-content:center; margin-top: 16px;">
+          <li><strong>Email:</strong> <a href="mailto:Mohammad.R.Rahman@oulu.fi">Mohammad.R.Rahman@oulu.fi</a></li>
+          <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Profile</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">MohammadRakiburRahman</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">Mohammad Rakibur Rahman</a></li>
+          <li><strong>Location:</strong> Oulu, Finland</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrapper">
+      © <span id="year"></span> Mohammad Rakibur Rahman<br />
+      <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      |
+      <a href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">GitHub</a>
+      |
+      <a href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohammad Rakibur Rahman",
+    "jobTitle": "MSc Student in Computer Vision and Artificial Intelligence",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oulu",
+      "addressCountry": "FI"
+    },
+    "email": "mailto:Mohammad.R.Rahman@oulu.fi",
+    "url": "https://rakibrahman016.github.io/My_Portfolio/",
+    "sameAs": [
+      "https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ",
+      "https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/",
+      "https://github.com/MohammadRakiburRahman"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Oulu"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "North South University"
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    const links = Array.from(document.querySelectorAll('.navlink'));
+    const sections = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = '#' + entry.target.id;
+        const link = links.find(a => a.getAttribute('href') === id);
+
+        if (entry.isIntersecting) {
+          links.forEach(a => {
+            a.classList.remove('active');
+            a.removeAttribute('aria-current');
+          });
+          if (link) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        }
+      });
+    }, {
+      rootMargin: "-45% 0px -45% 0px",
+      threshold: 0.01
+    });
+
+    sections.forEach(sec => navObserver.observe(sec));
+
+    const themeToggle = document.getElementById('themeToggle');
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggle.setAttribute('aria-pressed', theme === 'dark');
+    };
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      applyTheme(storedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(current);
+      localStorage.setItem('theme', current);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
