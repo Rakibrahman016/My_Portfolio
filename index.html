@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mohammad Rakibur Rahman – Software Engineer & AI Enthusiast</title>
-  <meta name="description" content="Portfolio of Mohammad Rakibur Rahman – Software Engineer & AI Enthusiast in Oulu, Finland. Projects in computer vision, thermal imaging, and intelligent systems." />
-  <link rel="canonical" href="https://example.com/" />
-  <meta property="og:title" content="Mohammad Rakibur Rahman – Software Engineer & AI Enthusiast" />
-  <meta property="og:description" content="Projects in computer vision, thermal imaging (ThermApp), and intelligent systems. Based in Oulu, Finland." />
+  <title>Mohammad Rakibur Rahman – Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Mohammad Rakibur Rahman, MSc student at the University of Oulu working on computer vision, thermal imaging, multimodal physiological monitoring, and intelligent sensing systems." />
+  <link rel="canonical" href="https://rakibrahman016.github.io/My_Portfolio/" />
+  <meta property="og:title" content="Mohammad Rakibur Rahman – Research Portfolio" />
+  <meta property="og:description" content="Computer vision, thermal imaging, multimodal physiological monitoring, and intelligent sensing systems. Based in Oulu, Finland." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:url" content="https://rakibrahman016.github.io/My_Portfolio/" />
   <meta name="twitter:card" content="summary" />
   <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="favicon.ico" />
 
   <style>
-    /* Design tokens */
     :root{
-      --bg: #f9fafb; /* light */
+      --bg: #f9fafb;
       --text: #1f2937;
       --muted: #6b7280;
       --brand-900: #0d47a1;
@@ -27,9 +26,12 @@
       --chip-bg: #e3f2fd;
       --chip-fg: #0d47a1;
       --shadow: 0 1px 4px rgba(0,0,0,.08);
+      --border: #e5e7eb;
+      --maxw: 1100px;
     }
+
     [data-theme="dark"]{
-      --bg: #0b111b; /* dark */
+      --bg: #0b111b;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --brand-900: #93c5fd;
@@ -39,123 +41,282 @@
       --chip-bg: #0b2347;
       --chip-fg: #93c5fd;
       --shadow: 0 1px 4px rgba(0,0,0,.35);
+      --border: #1f2937;
     }
 
-    html,body{height:100%}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-      line-height:1.6; color:var(--text); background:var(--bg);
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      line-height:1.65;
+      color:var(--text);
+      background:var(--bg);
     }
-    a{ color: var(--brand-700); text-decoration: none; }
-    a:hover{text-decoration: underline}
-    .wrapper{ width: min(1100px, 92%); margin: 0 auto; }
 
-    /* Skip link */
-    .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus{ position:static; width:auto; height:auto; padding:.5rem .75rem; background:var(--surface); box-shadow: var(--shadow); border-radius:.5rem; }
+    img{max-width:100%; display:block}
+    a{color:var(--brand-700); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrapper{width:min(var(--maxw), 92%); margin:0 auto}
+    .muted{color:var(--muted)}
+    .surface{background:var(--surface)}
+    .alt{background:color-mix(in oklab, var(--ring) 35%, transparent)}
 
-    header{ background: linear-gradient(135deg, var(--brand-900), var(--brand-700)); color:#fff; padding:72px 0 48px; text-align:center; }
-    header h1{ font-size: clamp(1.8rem, 2.6vw + 1rem, 2.6rem); margin:0 0 .5rem; }
-    header p{ opacity:.95; max-width: 60ch; margin: 0 auto 1.25rem; }
-    .cta-row{ display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin-top:1rem; }
-    .btn{ display:inline-block; padding:.6rem .95rem; border-radius:.75rem; background:#fff; color:#0d47a1; font-weight:600; box-shadow: var(--shadow); border:1px solid transparent; }
-    .btn:hover{ text-decoration:none; border-color: var(--ring); }
-    .btn.alt{ background:transparent; color:#fff; border-color:#ffffff33 }
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      position:static; width:auto; height:auto; padding:.5rem .75rem;
+      background:var(--surface); box-shadow:var(--shadow); border-radius:.5rem;
+    }
 
-    nav{ position: sticky; top:0; z-index: 50; background: var(--surface); box-shadow: var(--shadow); }
-    nav ul{ list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:.25rem .75rem; margin:0; padding:.25rem 0; }
-    nav a{ display:block; padding:.85rem .75rem; border-radius:.5rem; font-weight:600; color:inherit; }
-    nav a[aria-current="page"], nav a.active{ background: var(--ring); color: var(--brand-900); text-decoration:none; }
+    header{
+      background: linear-gradient(135deg, var(--brand-900), var(--brand-700));
+      color:#fff;
+      padding:78px 0 54px;
+      text-align:center;
+    }
 
-    section{ padding:64px 0; }
-    .section-title{ text-align:center; margin-bottom: 32px; }
-    .section-title h2{ font-size: clamp(1.4rem, 1vw + 1rem, 1.9rem); color: var(--brand-900); margin:0; }
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:.75rem;
+      padding:.35rem .75rem;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      font-size:.9rem;
+      background:rgba(255,255,255,.08);
+    }
 
-    .about{ display:grid; grid-template-columns: 1fr 320px; gap: 32px; align-items:center; }
-    .about-text p{ margin: 0 0 1rem; }
-    .about-image{ text-align:center; }
-    .about-image img{ width:100%; max-width:260px; height:auto; border-radius:50%; box-shadow: var(--shadow); }
+    header h1{
+      font-size: clamp(2rem, 2.8vw + 1rem, 3rem);
+      margin:0 0 .75rem;
+      line-height:1.15;
+    }
 
-    .two-column{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-    .column{ }
+    header p{
+      max-width:70ch;
+      margin:0 auto 1.25rem;
+      opacity:.96;
+    }
 
-    .item{ margin-bottom: 22px; }
-    .item h3{ margin:0 0 6px; color: var(--brand-700); font-size: 1.15rem; }
-    .meta{ display:block; font-size:.95rem; color: var(--muted); margin-bottom:6px; }
+    .cta-row{
+      display:flex;
+      gap:.75rem;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:1.25rem;
+    }
 
-    .skills-list, .language-list{ display:flex; flex-wrap:wrap; gap: 10px 16px; list-style:none; padding:0; margin:8px 0 0; }
-    .skills-list li, .language-list li{ background: var(--chip-bg); color: var(--chip-fg); padding:6px 12px; border-radius: 999px; font-size:.92rem; }
+    .btn{
+      display:inline-block;
+      padding:.7rem 1rem;
+      border-radius:.8rem;
+      background:#fff;
+      color:#0d47a1;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      border:1px solid transparent;
+      cursor:pointer;
+    }
 
-    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; align-items: start;  }
-    .card{ background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); padding: 18px; transition: transform .2s ease; border: 1px solid transparent; }
-    .card:hover{ transform: translateY(-2px); border-color: var(--ring); }
-    .card h3{ font-size:1.15rem; margin:.25rem 0 .5rem; color: var(--brand-700); }
-    .card p{ margin:.25rem 0 0; font-size:.95rem; }
-    figure{ margin: 12px 0 0; }
-    figure img{ width:100%; height:auto; border-radius: 8px; }
-    figcaption{ font-size:.85rem; color:var(--muted); margin-top:6px; }
+    .btn:hover{text-decoration:none; border-color:var(--ring)}
+    .btn.alt{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
 
-    footer{ background: var(--brand-900); color:#fff; text-align:center; padding: 28px 0; font-size:.95rem; }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--surface);
+      box-shadow:var(--shadow);
+    }
 
-    .muted{ color: var(--muted); }
+    nav ul{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.25rem .55rem;
+      margin:0;
+      padding:.3rem 0;
+    }
 
-    /* Utilities */
-    .surface{ background: linear-gradient(0deg, transparent, transparent), var(--surface); }
-    .alt{ background: color-mix(in oklab, var(--ring) 35%, transparent); }
+    nav a{
+      display:block;
+      padding:.85rem .75rem;
+      border-radius:.55rem;
+      font-weight:700;
+      color:inherit;
+    }
 
-    @media (max-width: 820px){ .about{ grid-template-columns: 1fr; } }
+    nav a.active,
+    nav a[aria-current="page"]{
+      background:var(--ring);
+      color:var(--brand-900);
+      text-decoration:none;
+    }
 
-    /* 1) Keep cards aligned neatly in a grid */
-.grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* consistent min width */
-  gap: 24px;
-  align-items: start;  /* don't stretch short cards */
-}
+    section{padding:68px 0}
+    .section-title{text-align:center; margin-bottom:32px}
+    .section-title h2{
+      margin:0 0 .4rem;
+      color:var(--brand-900);
+      font-size:clamp(1.5rem, 1vw + 1rem, 2rem);
+    }
+    .section-title p{
+      margin:0 auto;
+      max-width:65ch;
+      color:var(--muted);
+    }
 
-/* 2) Make every card use the same internal layout */
-.card{
-  display: flex;
-  flex-direction: column;
-}
-.card > * + *{ margin-top: .5rem; }  /* consistent vertical rhythm */
+    .about{
+      display:grid;
+      grid-template-columns: 1.3fr 320px;
+      gap:32px;
+      align-items:center;
+    }
 
-/* 3) Normalize images so they don't break alignment */
-.card img{
-  width: 100%;
-  height: auto;          /* default safety */
-  display: block;
-  border-radius: 8px;
-}
+    .about-text p{margin:0 0 1rem}
+    .about-image img{
+      width:100%;
+      max-width:260px;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow:var(--shadow);
+      margin-inline:auto;
+    }
 
-/* If a card has a hero/thumb image, give it a fixed ratio for consistency */
-.card .thumb{
-  aspect-ratio: 16/9;    /* pick 4/3, 1/1, etc. */
-  object-fit: cover;
-}
+    .two-column{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:32px;
+    }
 
-/* 4) Make the multi-image figure (ThermApp) consistent */
-#projects .card figure{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-}
-#projects .card figure img{
-  aspect-ratio: 4/3;
-  object-fit: cover;     /* crops edges to keep rows aligned */
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:24px;
+      align-items:start;
+    }
 
-/* 5) Optional: keep card heights visually similar without hard-capping text */
-#projects .card p{
-  display: -webkit-box;
-  -webkit-line-clamp: 4;   /* show ~4 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+    .card{
+      display:flex;
+      flex-direction:column;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:20px;
+      transition:transform .2s ease, border-color .2s ease;
+      height:100%;
+    }
 
-/* 6) Push links to the bottom so footers align */
-.card .spacer{ margin-top: auto; }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:var(--ring);
+    }
 
+    .card > * + *{margin-top:.55rem}
+    .card h3{
+      margin:0;
+      font-size:1.15rem;
+      color:var(--brand-700);
+      line-height:1.35;
+    }
+
+    .card p{margin:0}
+    .card .spacer{margin-top:auto}
+
+    .item{
+      margin-bottom:24px;
+      padding-bottom:20px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .item:last-child{
+      margin-bottom:0;
+      padding-bottom:0;
+      border-bottom:none;
+    }
+
+    .item h3{
+      margin:0 0 6px;
+      color:var(--brand-700);
+      font-size:1.15rem;
+    }
+
+    .meta{
+      display:block;
+      font-size:.95rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .skills-list,
+    .language-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      list-style:none;
+      padding:0;
+      margin:10px 0 0;
+    }
+
+    .skills-list li,
+    .language-list li{
+      background:var(--chip-bg);
+      color:var(--chip-fg);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:.92rem;
+    }
+
+    .project-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .project-gallery img{
+      aspect-ratio:4/3;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    .thumb{
+      aspect-ratio:16/9;
+      object-fit:cover;
+      border-radius:8px;
+      width:100%;
+    }
+
+    .list-clean{
+      margin:0;
+      padding-left:1.15rem;
+    }
+
+    .list-clean li + li{margin-top:.45rem}
+
+    footer{
+      background:var(--brand-900);
+      color:#fff;
+      text-align:center;
+      padding:30px 0;
+      font-size:.96rem;
+    }
+
+    footer a{color:#fff; text-decoration:underline}
+
+    @media (max-width: 820px){
+      .about{grid-template-columns:1fr}
+      header{padding:64px 0 42px}
+      section{padding:56px 0}
+    }
   </style>
 </head>
 <body>
@@ -163,27 +324,36 @@
 
   <header role="banner">
     <div class="wrapper">
-      <h1>Mohammad&nbsp;Rakibur&nbsp;Rahman</h1>
-      <p>Software Engineer &amp; Artificial Intelligence Enthusiast based in Oulu, Finland</p>
+      <span class="eyebrow">Research Portfolio</span>
+      <h1>Mohammad Rakibur Rahman</h1>
+      <p>
+        MSc student in Computer Science and Engineering at the University of Oulu, working on
+        computer vision, thermal imaging, and multimodal non-contact physiological monitoring.
+      </p>
+
       <div class="cta-row" role="group" aria-label="Primary actions">
-        <a class="btn" href="mailto:Mohammad.R.Rahman@student.oulu.fi" aria-label="Send email to Mohammad">Email me</a>
+        <a class="btn" href="mailto:Mohammad.R.Rahman@student.oulu.fi">Email me</a>
+        <a class="btn alt" href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a class="btn alt" href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a class="btn alt" href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="btn alt" href="https://drive.google.com/file/d/14ns6VLREtGyIaz1Y3WNSNDRzInp03iI5/view?usp=sharing" download>Download CV</a>
+        <a class="btn alt" href="https://drive.google.com/file/d/14ns6VLREtGyIaz1Y3WNSNDRzInp03iI5/view?usp=sharing" target="_blank" rel="noopener noreferrer">CV</a>
         <button class="btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌗 Theme</button>
       </div>
     </div>
   </header>
 
-  <nav role="navigation" aria-label="Primary" id="site-nav">
+  <nav role="navigation" aria-label="Primary">
     <div class="wrapper">
       <ul>
         <li><a href="#about" class="navlink">About</a></li>
-        <li><a href="#experiences" class="navlink">Experience</a></li>
-        <li><a href="#education" class="navlink">Education</a></li>
-        <li><a href="#projects" class="navlink">Projects</a></li>
-        <li><a href="#achievements" class="navlink">Achievements</a></li>
+        <li><a href="#research-interests" class="navlink">Research Interests</a></li>
+        <li><a href="#thesis" class="navlink">Thesis</a></li>
+        <li><a href="#publications" class="navlink">Publications</a></li>
+        <li><a href="#research-projects" class="navlink">Research Projects</a></li>
+        <li><a href="#experience" class="navlink">Experience</a></li>
+        <li><a href="#engineering-projects" class="navlink">Engineering Projects</a></li>
+        <li><a href="#talks" class="navlink">Presentations</a></li>
         <li><a href="#skills" class="navlink">Skills</a></li>
-        <li><a href="#hobbies" class="navlink">Hobbies</a></li>
         <li><a href="#contact" class="navlink">Contact</a></li>
       </ul>
     </div>
@@ -193,229 +363,413 @@
     <!-- About -->
     <section id="about" class="surface">
       <div class="wrapper">
-        <div class="section-title"><h2>About Me</h2></div>
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+
         <div class="about">
           <div class="about-text">
-            <p>Hello! I’m <strong>Mohammad Rakibur Rahman</strong>, a graduate student in Computer Science and Engineering focusing on Artificial Intelligence at the University of Oulu. Originally from Dhaka, Bangladesh, I moved to Finland to expand my horizons and pursue advanced studies in cutting‑edge technologies.</p>
-            <p>I’ve built real‑time software and intelligent systems—from designing RESTful APIs for IoT vending machines to a thermal imaging stack that converts raw sensor data to calibrated °C readings with real‑time detection. I enjoy bridging theory with practice and presenting findings .</p>
-            <p>Beyond work, I ride across quiet Finnish paths, capture moments through my lens, and plan the next adventure—habits that keep me curious and patient.</p>
+            <p>
+              Hello, I’m <strong>Mohammad Rakibur Rahman</strong>, an MSc student in Computer Science and Engineering
+              with a focus on Artificial Intelligence at the <strong>University of Oulu</strong>, Finland.
+              My work sits at the intersection of <strong>computer vision, thermal imaging, multimodal sensing,
+              and intelligent real-time systems</strong>.
+            </p>
+            <p>
+              I am particularly interested in building research-driven systems that can translate complex sensing data
+              into meaningful physiological and behavioral insights. My recent work includes thermal camera software
+              development, calibration and temperature extraction pipelines, face detection in thermal video,
+              and multimodal sensing for non-contact physiological monitoring.
+            </p>
+            <p>
+              Alongside research, I also enjoy building practical systems and turning ideas into working software.
+              I value clarity, experimentation, and applied impact—especially in areas related to healthcare,
+              human-centered AI, and real-time vision applications.
+            </p>
           </div>
+
           <div class="about-image">
-            <!-- Use a real relative path; Windows absolute paths won’t work on the web -->
-            <picture>
-              <source srcset="assets/rakib.jpg" type="image/webp" />
-              <img src="assets/rakib.jpg" alt="Portrait of Mohammad Rakibur Rahman" width="500" height="500" loading="lazy" />
-            </picture>
+            <img src="assets/rakib.jpg" alt="Portrait of Mohammad Rakibur Rahman" width="500" height="500" loading="lazy" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research-interests" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Research Interests</h2>
+          <p>Areas I am actively exploring through research, thesis work, and experimental system development.</p>
+        </div>
+
+        <ul class="skills-list" style="justify-content:center;">
+          <li>Computer Vision</li>
+          <li>Thermal Imaging</li>
+          <li>Multimodal Physiological Monitoring</li>
+          <li>Contactless Health Sensing</li>
+          <li>Signal Processing</li>
+          <li>Human-Centered AI</li>
+          <li>Real-Time Image Processing</li>
+          <li>Deep Learning for Vision</li>
+          <li>Affective Computing</li>
+          <li>Autonomic Activity Analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Thesis -->
+    <section id="thesis" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Master’s Thesis</h2>
+          <p>Current research direction at the Center for Machine Vision and Signal Analysis (CMVS).</p>
+        </div>
+
+        <div class="card">
+          <h3>Development of a Multimodal System for Non-Contact Physiological Monitoring</h3>
+          <p>
+            My thesis investigates whether <strong>thermoregulation-driven temperature dynamics</strong> in facial and palm
+            regions, captured through thermal imaging, can serve as reliable <strong>non-contact indicators of autonomic activity</strong>,
+            particularly respiration-related and electrodermal responses.
+          </p>
+          <p>
+            The system integrates <strong>thermal imaging, RGB-D sensing, and wearable biosensors</strong> to study the relationship between
+            skin temperature dynamics and reference physiological signals. The broader goal is to advance contactless physiological monitoring
+            for applications in healthcare, affective computing, and intelligent human-centered systems.
+          </p>
+          <p class="muted">
+            Affiliation: Center for Machine Vision and Signal Analysis (CMVS), University of Oulu
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="alt">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Publications</h2>
+          <p>Selected research output and scholarly work.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>A Multichannel Localization Method for Camouflaged Object Detection</h3>
+            <p>
+              <strong>Rahman, M. R.</strong> and co-authors.
+              Presented at the <strong>IEEE International Conference on Image Processing (ICIP 2023)</strong>.
+            </p>
+            <p>
+              This work proposes a lightweight multichannel localization framework for camouflaged object detection using
+              Fourier-based analysis, entropy cues, class activation maps, and global average pooling to highlight discriminative regions.
+            </p>
+            <p class="spacer">
+              <a href="https://www.researchgate.net/publication/374543237_A_Multichannel_Localization_Method_for_Camouflaged_Object_Detection" target="_blank" rel="noopener noreferrer">Paper</a>
+              &nbsp;•&nbsp;
+              <a href="https://github.com/MohammadRakiburRahman/Multichannel-Localization-ICIP-2023" target="_blank" rel="noopener noreferrer">Code</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Google Scholar Profile</h3>
+            <p>
+              For citation record, research visibility, and publication updates, please see my Google Scholar profile.
+            </p>
+            <p class="spacer">
+              <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">View Google Scholar</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Projects -->
+    <section id="research-projects" class="surface">
+      <div class="wrapper">
+        <div class="section-title">
+          <h2>Research Projects</h2>
+          <p>Projects aligned with my research direction in thermal vision, multimodal sensing, and scientific software.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>ThermApp Thermal Imaging Application</h3>
+            <p>
+              A Python-based software system for the ThermApp infrared camera, including
+              <strong>low-level USB communication</strong>, <strong>real-time frame acquisition</strong>,
+              <strong>sensor calibration</strong>, and <strong>temperature extraction</strong> using Planck-law-based conversion.
+            </p>
+            <p>
+              The system was extended with thermal face detection to support automatic region-of-interest processing
+              in thermal video streams and research-driven analysis workflows.
+            </p>
+            <div class="project-gallery">
+              <img src="assets/img1.jpeg" alt="Thermal output example 1" loading="lazy" />
+              <img src="assets/img2.jpg" alt="Thermal output example 2" loading="lazy" />
+              <img src="assets/demo.gif" alt="Thermal video demo" loading="lazy" />
+            </div>
+            <p class="spacer">
+              <a href="https://github.com/MohammadRakiburRahman/Them_App" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Multimodal Non-Contact Physiological Monitoring</h3>
+            <p>
+              Ongoing research on whether facial and palm thermal dynamics can be used as
+              contactless markers of physiological activity when analyzed together with additional sensing modalities.
+            </p>
+            <p>
+              The work combines thermal imaging, RGB-D sensing, and wearable references to investigate
+              temporal patterns related to autonomic responses and respiratory behavior.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Multichannel Localization for Camouflaged Object Detection</h3>
+            <p>
+              A research project proposing a computationally lightweight localization method for camouflaged objects
+              using Fourier phase-amplitude analysis, local entropy, and class activation maps.
+            </p>
+            <div class="project-gallery">
+              <img src="assets/cod1.jpg" alt="Camouflaged object localization example" loading="lazy" />
+              <img src="assets/cod2.png" alt="Camouflaged object localization result" loading="lazy" />
+            </div>
+            <p class="spacer">
+              <a href="https://github.com/MohammadRakiburRahman/Multichannel-Localization-ICIP-2023" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section id="experiences" class="alt" aria-labelledby="exp-title">
+    <section id="experience" class="alt">
       <div class="wrapper">
-        <div class="section-title"><h2 id="exp-title">Experience</h2></div>
-
-        <article class="item" aria-labelledby="exp-cmvs-title">
-          <h3 id="exp-cmvs-title">Summer Trainee — Center for Machine Vision & Signal Analysis (CMVS)</h3>
-          <span class="meta">Oulu, Finland • <time datetime="2025-06">June 2025</time> – <time datetime="2025-07">July 2025</time></span>
-          <p>During my internship at the Multimodal Sensing Lab (CMVS), University of Oulu, I developed a complete thermal imaging application for the ThermApp infrared camera. 
-            I worked on low-level USB device communication, implemented real-time frame acquisition and processing, and designed a calibration pipeline to reduce sensor noise and stabilize brightness. 
-            I also integrated Planck’s law–based temperature extraction to convert raw sensor values into meaningful °C readings and extended the system with YOLOv11-based face detection for automatic recognition in thermal video streams. 
-            Through this project, I gained hands-on experience in computer vision, sensor calibration, real-time image processing, and deep learning integration, while strengthening my ability to design modular, research-oriented software. <a href="https://github.com/MohammadRakiburRahman/Them_App" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
-        </article>
-
-        <article class="item" aria-labelledby="exp-junior-onu-title">
-          <h3 id="exp-junior-onu-title">Junior Software Engineer — Onutiative Ltd</h3>
-          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-03">Mar 2023</time> – <time datetime="2023-05">May 2023</time></span>
-          <p>Designed REST APIs for IoT vending machines, improving stock update accuracy and enhancing the performance of a vending‑machine management platform to boost operational efficiency by 25%. Conducted system testing to ensure robustness and reliability of deployed solutions.</p>
-        </article>
-
-        <article class="item" aria-labelledby="exp-intern-onu-title">
-          <h3 id="exp-intern-onu-title">Software Developer (Intern) — Onutiative Ltd</h3>
-          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-05">May 2023</time> – <time datetime="2024-06">Jun 2024</time></span>
-          <p>Built and deployed an automated sales reporting system for IoT devices using Flask, reducing report preparation time by 70%. Optimised CRM features for multinational clients to increase engagement by 15%, designed and tested RESTful APIs for real‑time data synchronisation across international offices (97.8% uptime) and crafted Excel VBA macros that cut manual work by 90%. 
-            I collaborated closely within an Agile team to deliver scalable solutions.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="surface">
-      <div class="wrapper">
-        <div class="section-title"><h2>Education</h2></div>
-        <div class="two-column">
-          <div class="column">
-            <div class="item">
-              <h3>MSc in Computer Science &amp; Engineering (Artificial Intelligence)</h3>
-              <span class="meta">University of Oulu • <time datetime="2024">2024</time> – ongoing</span>
-              <p>Advanced coursework in machine learning, computer vision and real‑time systems. Developed a strong theoretical foundation in AI and translated it into practical projects and research.</p>
-            </div>
-            <div class="item">
-              <h3>BSc in Computer Science &amp; Engineering (Artificial Intelligence)</h3>
-              <span class="meta">North South University • <time datetime="2018">2018</time> – <time datetime="2023">2023</time></span>
-              <p>Built the groundwork in algorithms, data structures and software development. Focused on artificial intelligence and computational theory while participating in extracurricular teaching activities.</p>
-            </div>
-          </div>
+        <div class="section-title">
+          <h2>Research & Professional Experience</h2>
+          <p>Academic and industry experience shaping my work in intelligent systems and applied AI.</p>
         </div>
+
+        <article class="item">
+          <h3>Summer Trainee — Center for Machine Vision & Signal Analysis (CMVS)</h3>
+          <span class="meta">Oulu, Finland • <time datetime="2025-06">June 2025</time> – <time datetime="2025-07">July 2025</time></span>
+          <p>
+            Developed a complete thermal imaging application for the ThermApp infrared camera.
+            Worked on low-level USB communication, real-time frame processing, calibration pipelines,
+            and temperature extraction from raw thermal sensor data. Also explored face detection integration
+            for thermal streams and strengthened research software engineering skills in vision-based sensing.
+          </p>
+        </article>
+
+        <article class="item">
+          <h3>Junior Software Engineer — Onutiative Ltd</h3>
+          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-03">March 2023</time> – <time datetime="2023-05">May 2023</time></span>
+          <p>
+            Designed REST APIs for IoT vending machine systems, improved stock update accuracy,
+            and supported platform reliability through testing and backend development.
+          </p>
+        </article>
+
+        <article class="item">
+          <h3>Software Developer Intern — Onutiative Ltd</h3>
+          <span class="meta">Dhaka, Bangladesh • <time datetime="2023-05">May 2023</time> – <time datetime="2024-06">June 2024</time></span>
+          <p>
+            Built reporting systems for IoT devices using Flask, optimized CRM features, designed RESTful APIs,
+            and developed automation tools including Excel VBA macros to reduce manual effort and improve operations.
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="alt">
+    <!-- Engineering Projects -->
+    <section id="engineering-projects" class="surface">
       <div class="wrapper">
-        <div class="section-title"><h2>Projects</h2></div>
+        <div class="section-title">
+          <h2>Engineering Projects</h2>
+          <p>Additional applied AI and software projects beyond my research-focused work.</p>
+        </div>
 
         <div class="grid">
           <article class="card">
-            <h3>ThermApp Thermal Imaging Application</h3>
-            <p>A Python-based application for the ThermApp <strong>infrared</strong> camera, featuring low-level USB device communication, <strong> real-time frame acquisition and processing, and a custom calibration pipeline </strong> to reduce sensor noise and stabilize brightness. 
-              The system also integrates Planck’s law–based temperature extraction to convert raw sensor values into accurate °C readings, and extends functionality with <strong>YOLOv11</strong>Y-powered face detection for automatic recognition in thermal video streams.</p> <p><a href="https://github.com/MohammadRakiburRahman/Them_App" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
-            <figure>
-              <img src="assets/img1.jpeg" alt="Thermal output example" width="10" height="10" loading="lazy" />
-              
-              <img src="assets/img2.jpg" alt="Thermal output example" width="50" height="50" loading="lazy" />
-              
-              <img src="assets/demo.gif" alt="Thermal output example" width="600" height="300" loading="lazy" />
-              
-            </figure>
-          </article>
-
-          <article class="card">
-            <h3>Multichannel‑Localization</h3>
-            <p>This research proposes a novel <strong>multichannel approach</strong> for <strong>localizing camouflaged objects </strong>, which are often challenging to detect as they blend seamlessly into their surroundings.
-               The method combines <strong>Fourier phase–amplitude analysis </strong> with <strong>local entropy calculations </strong> and integrates them with <strong>Class Activation Maps (CAM)</strong> and <strong>Global Average Pooling (GAP)</strong> to highlight discriminative regions.
-              Unlike many deep learning–based solutions, the proposed technique is <strong>computationally lightweight</strong>, requires <strong>no feature training</strong>, and is effective even in resource-constrained environments.
-              Experiments on multiple benchmark COD datasets <strong>(COD10K, CAMO, CHAMELEON, NC4K)</strong> showed that the approach successfully localized over <strong> 80% </strong>of camouflaged objects, making it a <strong> practical and efficient solution </strong> for real-world detection tasks.</p>
-            <p><a href="https://github.com/MohammadRakiburRahman/Multichannel-Localization-ICIP-2023" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
-            <figure>
-              <img src="assets/cod1.jpg" alt="Example of camouflaged object localisation" width="600" height="360" loading="lazy" />
-              <figcaption>Localising camouflaged objects on COD datasets.</figcaption>
-              <img src="assets/cod2.png" alt="Example of camouflaged object localisation" width="600" height="360" loading="lazy" />
-              <figcaption>Capturing the ROI</figcaption>
-            </figure>
-          </article>
-
-          <article class="card">
             <h3>Helmet &amp; License Plate Detection</h3>
-            <p>Real‑time safety compliance with <strong>YOLOv4</strong>, wired into data pipelines via <strong>TensorFlow</strong> and <strong>Flask</strong> to reduce manual inspections.</p>
+            <p>
+              Real-time safety compliance system using <strong>YOLOv4</strong>, integrated with
+              <strong>TensorFlow</strong> and <strong>Flask</strong> to reduce manual inspections.
+            </p>
           </article>
 
           <article class="card">
             <h3>Traffic Sign Classification</h3>
-            <p><strong>VGG16</strong> model reaching 92% accuracy, hardened for real‑world use; built with <strong>TensorFlow</strong>, <strong>Keras</strong>, and <strong>scikit‑learn</strong>.</p>
+            <p>
+              Built a <strong>VGG16-based</strong> traffic sign classifier reaching strong accuracy and designed
+              for robust real-world usage with TensorFlow, Keras, and scikit-learn.
+            </p>
           </article>
 
           <article class="card">
             <h3>Face Recognition Attendance</h3>
-            <p>Team‑led system combining <strong>ResNet50</strong> and <strong>HOG</strong> features with <strong>OpenCV</strong> for accurate, real‑time employee attendance tracking.</p>
+            <p>
+              Team-led real-time attendance system combining <strong>ResNet50</strong>, <strong>HOG features</strong>,
+              and <strong>OpenCV</strong> for reliable employee recognition and logging.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Achievements -->
-    <section id="achievements" class="surface">
+    <!-- Talks -->
+    <section id="talks" class="alt">
       <div class="wrapper">
-        <div class="section-title"><h2>Achievements &amp; Publications</h2></div>
+        <div class="section-title">
+          <h2>Presentations & Academic Activities</h2>
+          <p>Selected presentations, posters, and research visibility activities.</p>
+        </div>
+
         <div class="grid">
           <article class="card">
-            <h3>Publication</h3>
-            <p><strong>“A Multichannel Localization Method for Camouflaged Object Detection.”</strong> — ” Presented at the 2023 IEEE International Conference on Image Processing (ICIP). 
-              I <strong>led</strong> the development of a Fourier‑based localization method using class activation mapping and pixel entropy, achieving high accuracy without relying on pre‑trained features.</p>
-            <p><a href="https://www.researchgate.net/publication/374543237_A_Multichannel_Localization_Method_for_Camouflaged_Object_Detection" target="_blank" rel="noopener noreferrer">Paper Link</a></p>
+            <h3>Poster Presenter — UniOulu Science Day 2026</h3>
+            <p>
+              Poster presentation on contactless physiological monitoring using thermal imaging and multimodal sensing.
+            </p>
           </article>
+
           <article class="card">
-            <h3>Research Assistant Grant</h3>
-            <p>€1500 Summer Research Assistant grant at CMVS Lab, University of Oulu.</p>
+            <h3>IEEE ICIP 2023</h3>
+            <p>
+              Research contribution and conference visibility through publication on camouflaged object detection.
+            </p>
           </article>
+
           <article class="card">
-            <h3>Travel Grant</h3>
-            <p>One of 15 recipients of the Progress Workshop travel grant to attend IEEE ICIP 2023.</p>
-          </article>
-          <article class="card">
-            <h3>Certifications</h3>
-            <p>Stanford Online: <strong>Supervised Machine Learning</strong> (2023). IELTS overall band 7.0.</p>
+            <h3>Open Research Profile</h3>
+            <p>
+              Research updates and scholarly visibility through Google Scholar, GitHub repositories, and project documentation.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="alt">
+    <section id="skills" class="surface">
       <div class="wrapper">
-        <div class="section-title"><h2>Skills &amp; Tools</h2></div>
+        <div class="section-title">
+          <h2>Skills & Tools</h2>
+          <p>Technical, research, and software skills supporting my work.</p>
+        </div>
+
         <div class="two-column">
-          <div class="column">
+          <div>
+            <h3>Research Skills</h3>
+            <ul class="skills-list">
+              <li>Thermal Imaging Analysis</li>
+              <li>Physiological Signal Processing</li>
+              <li>Multimodal Sensor Fusion</li>
+              <li>Experimental Design</li>
+              <li>Scientific Writing</li>
+              <li>Dataset Annotation</li>
+              <li>Real-Time Data Processing</li>
+              <li>Computer Vision Evaluation</li>
+            </ul>
+
             <h3>Programming Languages</h3>
             <ul class="skills-list">
-              <li>Python</li><li>C</li><li>PHP</li>
+              <li>Python</li>
+              <li>C</li>
+              <li>PHP</li>
             </ul>
-            <h3>Frameworks &amp; Libraries</h3>
+
+            <h3>Frameworks & Libraries</h3>
             <ul class="skills-list">
-              <li>Flask</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>PyTorch</li><li>scikit‑learn</li><li>NumPy</li><li>Pandas</li><li>SciPy</li>
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>Keras</li>
+              <li>OpenCV</li>
+              <li>Flask</li>
+              <li>scikit-learn</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>SciPy</li>
             </ul>
           </div>
-          <div class="column">
-            <h3>Software &amp; DevOps</h3>
+
+          <div>
+            <h3>Software & Development</h3>
             <ul class="skills-list">
-              <li>Agile &amp; Scrum</li><li>UML</li><li>Git</li>
+              <li>Git</li>
+              <li>Agile & Scrum</li>
+              <li>REST APIs</li>
+              <li>UML</li>
+              <li>Excel VBA</li>
+              <li>Research Prototyping</li>
             </ul>
+
             <h3>Databases</h3>
             <ul class="skills-list">
-              <li>MySQL</li><li>SQLite</li><li>PostgreSQL</li>
+              <li>MySQL</li>
+              <li>SQLite</li>
+              <li>PostgreSQL</li>
             </ul>
+
             <h3>Languages</h3>
             <ul class="language-list">
-              <li>English — Fluent</li><li>Finnish — Basic</li><li>Bengali — Native</li><li>Hindi — Conversational</li>
+              <li>English — Fluent</li>
+              <li>Finnish — Basic</li>
+              <li>Bengali — Native</li>
+              <li>Hindi — Conversational</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Hobbies -->
-    <section id="hobbies" class="surface">
+    <!-- Achievements -->
+    <section id="achievements" class="alt">
       <div class="wrapper">
-        <div class="section-title"><h2>Hobbies &amp; Personal Interests</h2></div>
+        <div class="section-title">
+          <h2>Achievements</h2>
+          <p>Research and academic milestones.</p>
+        </div>
+
         <div class="grid">
           <article class="card">
-            <figure>
-              <img src="assets/Bike.jpeg" alt="Cycling through Finnish landscapes" width="640" height="380" loading="lazy" />
-            </figure>
-            <h3>Bike Riding</h3>
-            <p>Cycling is my favourite way to clear my mind and appreciate Finland’s landscapes. Whether on a quiet road through a forest or a brisk ride along the coast, biking rejuvenates me and inspires creative thinking in my professional life.</p>
+            <h3>IEEE ICIP 2023 Publication</h3>
+            <p>Published research work on camouflaged object detection at a leading international image processing conference.</p>
           </article>
+
           <article class="card">
-            <figure>
-              <img src="assets/advanture.jpeg" alt="Mountain trek" width="640" height="380" loading="lazy" />
-            </figure>
-            <h3>Adventure &amp; Exploration</h3>
-            <p>From exploring new cities to trekking through mountains, I love pushing my comfort zone and experiencing diverse cultures. Adventure teaches me adaptability and resilience—qualities I bring back to my work and studies.</p>
+            <h3>Research Assistant Grant</h3>
+            <p>Received a summer research assistant grant at the University of Oulu.</p>
           </article>
+
           <article class="card">
-            <figure>
-              <img src="assets/photography.jpeg" alt="Street photography scene" width="640" height="380" loading="lazy" />
-            </figure>
-            <h3>Photography</h3>
-            <p>Capturing candid moments is a creative outlet that complements my analytical work. Photography trains my eye for detail and composition, skills that translate surprisingly well to designing intuitive software and AI models.</p>
+            <h3>Travel Grant</h3>
+            <p>Selected as one of a limited number of recipients for travel support related to IEEE ICIP participation.</p>
           </article>
+
           <article class="card">
-            <h3>Teaching &amp; Mentoring</h3>
-            <p>I have been a freelance teacher for over seven years, sharing knowledge with students and junior developers. Guiding others deepens my understanding and keeps me grounded in core principles.</p>
+            <h3>Certifications</h3>
+            <p>Stanford Online: Supervised Machine Learning. IELTS overall band 7.0.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="alt">
+    <section id="contact" class="surface">
       <div class="wrapper">
-        <div class="section-title"><h2>Get in Touch</h2></div>
-        <p style="text-align:center; max-width: 60ch; margin: 0 auto;">I’m looking for opportunities in software engineering, machine learning, and computer vision. For collaboration or a quick hello, reach out below.</p>
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>I am open to research collaboration, thesis-related discussion, and opportunities in computer vision, AI, and sensing systems.</p>
+        </div>
+
         <ul class="skills-list" style="justify-content:center; margin-top: 16px;">
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">Mohammad Rakibur Rahman</a></li>
           <li><strong>Email:</strong> <a href="mailto:Mohammad.R.Rahman@student.oulu.fi">Mohammad.R.Rahman@student.oulu.fi</a></li>
+          <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Profile</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">MohammadRakiburRahman</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">Mohammad Rakibur Rahman</a></li>
           <li><strong>Location:</strong> Oulu, Finland</li>
         </ul>
       </div>
@@ -423,53 +777,93 @@
   </main>
 
   <footer role="contentinfo">
-    <div class="wrapper">© <span id="year"></span> Mohammad Rakibur Rahman.</div>
+    <div class="wrapper">
+      © <span id="year"></span> Mohammad Rakibur Rahman<br />
+      <a href="https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      |
+      <a href="https://github.com/MohammadRakiburRahman" target="_blank" rel="noopener noreferrer">GitHub</a>
+      |
+      <a href="https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
   </footer>
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mohammad Rakibur Rahman",
-    "jobTitle": "Software Engineer & AI Enthusiast",
-    "address": {"@type":"PostalAddress","addressLocality":"Oulu","addressCountry":"FI"},
+    "jobTitle": "Research Student in Computer Vision and Artificial Intelligence",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oulu",
+      "addressCountry": "FI"
+    },
     "email": "mailto:Mohammad.R.Rahman@student.oulu.fi",
-    "url": "https://example.com/",
+    "url": "https://rakibrahman016.github.io/My_Portfolio/",
     "sameAs": [
+      "https://scholar.google.com/citations?hl=en&user=AHQxvEcAAAAJ",
       "https://www.linkedin.com/in/mohammad-rakibur-rahman-b13425207/",
       "https://github.com/MohammadRakiburRahman"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Oulu"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "North South University"
+      }
     ]
   }
   </script>
 
   <script>
-    // Active nav link on scroll
     const links = Array.from(document.querySelectorAll('.navlink'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    const navObserver = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
+    const sections = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         const id = '#' + entry.target.id;
         const link = links.find(a => a.getAttribute('href') === id);
-        if(entry.isIntersecting){
-          links.forEach(a=>a.classList.remove('active'));
-          if(link){ link.classList.add('active'); link.setAttribute('aria-current','page'); }
+
+        if (entry.isIntersecting) {
+          links.forEach(a => {
+            a.classList.remove('active');
+            a.removeAttribute('aria-current');
+          });
+          if (link) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
         }
       });
-    },{ rootMargin: "-50% 0px -45% 0px", threshold: 0.01 });
-    sections.forEach(sec => navObserver.observe(sec));
-
-    // Theme toggle with localStorage
-    const themeToggle = document.getElementById('themeToggle');
-    const applyTheme = (t)=>{ document.documentElement.setAttribute('data-theme', t); themeToggle.setAttribute('aria-pressed', t==='dark'); };
-    const stored = localStorage.getItem('theme');
-    if(stored){ applyTheme(stored); }
-    themeToggle?.addEventListener('click', ()=>{
-      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(current); localStorage.setItem('theme', current);
+    }, {
+      rootMargin: "-45% 0px -45% 0px",
+      threshold: 0.01
     });
 
-    // Copyright year
+    sections.forEach(sec => navObserver.observe(sec));
+
+    const themeToggle = document.getElementById('themeToggle');
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggle.setAttribute('aria-pressed', theme === 'dark');
+    };
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      applyTheme(storedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(current);
+      localStorage.setItem('theme', current);
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
